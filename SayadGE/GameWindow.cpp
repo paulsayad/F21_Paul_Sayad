@@ -6,13 +6,12 @@ namespace SayadGE
 {
 	GameWindow::GameWindow()
 	{
-
 		#ifdef SAYADGE_WINDOWS
-				mWindow = new GlfwImplementation();
+			mWindow = std::unique_ptr<WindowImplementation>{ new GlfwImplementation() };
 		#elif SAYADGE_MAC
-				mWindow = new GlfwImplementation();
+			mWindow = std::unique_ptr<WindowImplementation>{ new GlfwImplementation() };
 		#elif SAYADGE_LINUX
-				mWindow = GlfwImplementation();
+			mWindow = std::unique_ptr<WindowImplementation>{ new GlfwImplementation() };
 		#else
 				#only_Windows_Linux_Mac_are_supported
 		#endif
