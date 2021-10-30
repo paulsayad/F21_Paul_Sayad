@@ -1,6 +1,7 @@
 #pragma once
 
 #include "SayadGEUtils.h"
+#include "GameWindow.h"
 
 namespace SayadGE
 {
@@ -14,7 +15,7 @@ namespace SayadGE
 		SayadGEApp(); // Protected Construct - Final user cannot just create BubbleApp objects, they are expected to take our BubbleApp and inherit from it
 
 	private:
-
+		GameWindow mGameWindow;
 	};
 
 
