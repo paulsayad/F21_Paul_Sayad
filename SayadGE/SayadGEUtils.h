@@ -11,3 +11,9 @@
 #else
 	#define SAYADGE_API
 #endif
+
+#ifdef SAYADGE_DEBUG
+	#define SAYADGE_LOG(x) std::cout << x << std::endl;
+#else
+	#define SAYADGE_LOG(x)
+#endif

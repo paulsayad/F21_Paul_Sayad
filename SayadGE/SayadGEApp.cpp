@@ -16,7 +16,7 @@ namespace SayadGE
 	// Starts the game 
 	void SayadGEApp::Run()
 	{
-		std::cout << "SayadGE is running..." << std::endl;
+		SAYADGE_LOG("SayadGE is running...");
 		
 		mGameWindow.CreateWindow(800, 600, "Test");
 			
@@ -24,16 +24,17 @@ namespace SayadGE
 
 		// Shaders
 		SayadGE::Shader myShader;
-		myShader.Load("F:/CS/school/fourth_year/cs_39541/MyGame/SayadGE/Assets/Shaders/myVertexShader.glsl", 
-			"F:/CS/school/fourth_year/cs_39541/MyGame/SayadGE/Assets/Shaders/myFragmentShader.glsl");
+		myShader.Load("Assets/Shaders/myVertexShader.glsl", 
+			"Assets/Shaders/myFragmentShader.glsl");
 		myShader.SetVec2IntUniform("screenSize",
 			mGameWindow.GetWindowWidth(),
 			mGameWindow.GetWindowHeight());
 
 		// Textures
-
 		SayadGE::Sprite fish;
 		fish.LoadImage("Assets/Textures/test.png");
+
+		mTimeOfNextFrame = std::chrono::steady_clock::now() + mFrameDuration;
 
 		// Game Loop
 		while (true)
@@ -44,9 +45,13 @@ namespace SayadGE
 
 			Renderer::Draw(fish, 100, 50, fish.GetWidth(), fish.GetHeight(), myShader);
 
+			std::this_thread::sleep_until(mTimeOfNextFrame);
+
 			mGameWindow.SwapBuffers();
 
 			mGameWindow.PollEvents();
+
+			mTimeOfNextFrame += mFrameDuration;
 		}
 
 		Renderer::ShutDown();

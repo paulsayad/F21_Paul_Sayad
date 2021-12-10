@@ -15,6 +15,10 @@ elseif(UNIX)
 	add_definitions(-DSAYADGE_LINUX)
 endif()
 
+add_definitions(-DSAYADGE_OPENGL)
+
 add_subdirectory(MyGame)
 add_subdirectory(SayadGE)
 add_subdirectory(glfw)
+add_subdirectory(glad)
+add_subdirectory(stbi)

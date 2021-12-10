@@ -3,6 +3,8 @@
 #include "SayadGEUtils.h"
 #include "GameWindow.h"
 
+#define FRAMES_PER_SECOND 30
+
 namespace SayadGE
 {
 	class SAYADGE_API SayadGEApp
@@ -16,6 +18,9 @@ namespace SayadGE
 
 	private:
 		GameWindow mGameWindow;
+
+		std::chrono::steady_clock::time_point mTimeOfNextFrame;
+		std::chrono::milliseconds mFrameDuration{ 1000 / FRAMES_PER_SECOND };
 	};
 
 
