@@ -1,5 +1,6 @@
 #pragma once
-#include <string>
+#include "pch.h"
+#include "Events.h"
 
 namespace SayadGE
 {
@@ -12,5 +13,7 @@ namespace SayadGE
 		virtual void PollEvents() = 0;
 		virtual int GetWindowWidth() const = 0;
 		virtual int GetWindowHeight() const = 0;
+		virtual void SetKeyPressedCallback(std::function<void(KeyPressedEvent&)> func) = 0;
+		virtual ~WindowImplementation() {};
 	};
 }

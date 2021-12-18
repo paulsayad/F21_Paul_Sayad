@@ -20,6 +20,10 @@ namespace SayadGE
 		
 		mGameWindow.CreateWindow(800, 600, "Test");
 			
+		mGameWindow.SetKeyPressedCallback([this](KeyPressedEvent& event) {
+			OnKeyPressed(event);
+			});
+
 		Renderer::Init();
 
 		// Shaders
@@ -60,6 +64,11 @@ namespace SayadGE
 	void SayadGEApp::OnUpdate()
 	{
 
+	}
+
+	void SayadGEApp::OnKeyPressed(KeyPressedEvent& event)
+	{
+		SAYADGE_LOG(event.GetKeyCode());
 	}
 
 	SayadGEApp::SayadGEApp()
