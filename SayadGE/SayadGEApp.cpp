@@ -18,26 +18,6 @@ namespace SayadGE
 	{
 		SAYADGE_LOG("SayadGE is running...");
 		
-		mGameWindow.CreateWindow(800, 600, "Test");
-			
-		mGameWindow.SetKeyPressedCallback([this](KeyPressedEvent& event) {
-			OnKeyPressed(event);
-			});
-
-		Renderer::Init();
-
-		// Shaders
-		SayadGE::Shader myShader;
-		myShader.Load("Assets/Shaders/myVertexShader.glsl", 
-			"Assets/Shaders/myFragmentShader.glsl");
-		myShader.SetVec2IntUniform("screenSize",
-			mGameWindow.GetWindowWidth(),
-			mGameWindow.GetWindowHeight());
-
-		// Textures
-		SayadGE::Sprite fish;
-		fish.LoadImage("Assets/Textures/test.png");
-
 		mTimeOfNextFrame = std::chrono::steady_clock::now() + mFrameDuration;
 
 		// Game Loop
@@ -46,8 +26,6 @@ namespace SayadGE
 			Renderer::ClearFrame();
 
 			OnUpdate();
-
-			Renderer::Draw(fish, 100, 50, fish.GetWidth(), fish.GetHeight(), myShader);
 
 			std::this_thread::sleep_until(mTimeOfNextFrame);
 
@@ -71,8 +49,24 @@ namespace SayadGE
 		SAYADGE_LOG(event.GetKeyCode());
 	}
 
+	int SayadGEApp::GetGameWindowWidth() const
+	{
+		return mGameWindow.GetWindowWidth();
+	}
+
+	int SayadGEApp::GetGameWindowHeight() const
+	{
+		return mGameWindow.GetWindowHeight();
+	}
+
 	SayadGEApp::SayadGEApp()
 	{
+		mGameWindow.CreateWindow(800, 800, "Game");
 
+		mGameWindow.SetKeyPressedCallback([this](KeyPressedEvent& event) {
+			OnKeyPressed(event);
+			});
+
+		Renderer::Init();
 	}
 }

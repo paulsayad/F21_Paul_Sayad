@@ -13,6 +13,8 @@ namespace SayadGE
 		void Run();						// Starts the Game
 		virtual void OnUpdate();		// Happens each run of the game, creates each frame of the game 
 		virtual void OnKeyPressed(KeyPressedEvent &event);
+		int GetGameWindowWidth() const;
+		int GetGameWindowHeight() const;
 
 	protected:
 		SayadGEApp(); // Protected Construct - Final user cannot just create BubbleApp objects, they are expected to take our BubbleApp and inherit from it
