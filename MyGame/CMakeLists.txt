@@ -1,4 +1,4 @@
-add_executable(my_game main.cpp)
+add_executable(my_game main.cpp MyGameApp.h MyGameApp.cpp Unit.h Unit.cpp)
 
 target_link_libraries(my_game sayadge_lib)
 

@@ -5,6 +5,7 @@ set(SOURCE_FILES
 	Renderer.cpp
 	Shader.cpp
 	Sprite.cpp
+	Events.cpp
 	OpenGLimpl/OpenGLRenderer.cpp
 	OpenGLimpl/OpenGLShader.cpp
 	OpenGLimpl/OpenGLSprite.cpp
@@ -23,6 +24,8 @@ set(HEADER_FILES
 	ShaderImplementation.h
 	Sprite.h
 	SpriteImplementation.h
+	Events.h
+	KeyCodes.h
 	OpenGLimpl/OpenGLRenderer.h
 	OpenGLimpl/OpenGLShader.h
 	OpenGLimpl/OpenGLSprite.h

@@ -4,7 +4,7 @@
 
 namespace SayadGE
 {
-	class KeyPressedEvent
+	class SAYADGE_API KeyPressedEvent
 	{
 	public:
 		KeyPressedEvent(int keyCode);
