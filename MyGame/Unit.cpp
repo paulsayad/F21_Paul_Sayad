@@ -81,12 +81,10 @@ void Unit::UpdatePosition()
 	switch (mDirection)
 	{
 	case Direction::Down:
-		if(IsPositionPossible(mPosX, mPosY- mSpeed))
-			mPosY -= mSpeed;
+		mPosY -= mSpeed;
 		break;
 	case Direction::Up:
-		if (IsPositionPossible(mPosX, mPosY + mSpeed))
-			mPosY += mSpeed;
+		mPosY += mSpeed;
 		break;
 	case Direction::Left:
 		if (IsPositionPossible(mPosX - mSpeed, mPosY))

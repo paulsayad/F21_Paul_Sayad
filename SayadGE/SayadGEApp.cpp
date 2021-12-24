@@ -61,7 +61,7 @@ namespace SayadGE
 
 	SayadGEApp::SayadGEApp()
 	{
-		mGameWindow.CreateWindow(800, 800, "Game");
+		mGameWindow.CreateWindow(800, 800, "Alien Invasion!");
 
 		mGameWindow.SetKeyPressedCallback([this](KeyPressedEvent& event) {
 			OnKeyPressed(event);

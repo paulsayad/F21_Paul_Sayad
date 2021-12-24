@@ -15,6 +15,13 @@ public:
 private:
 	Unit mHero;
 	std::vector<Unit> mViruses;
+	std::vector<Unit> mBullets;
+	
+	int mScore;
+	std::vector<Unit> mDigits;
+
+	Unit mBackground;
+
 	int mFrameCounter;
 	SayadGE::Shader mShader;
 };
