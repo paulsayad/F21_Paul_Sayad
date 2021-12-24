@@ -4,13 +4,13 @@
 
 # Objective:
 
-Aliens have been sent to destroy Earth, you must protect Earth by destroying the Aliens.
+- Aliens have been sent to destroy Earth, you must protect Earth by destroying the Aliens.
 
 # Controls:
 
-Left Arrow - Moves Left
-Right Arrow - Moves Right
-Space - Shoot Laserbeam
+- Left Arrow - Moves Left
+- Right Arrow - Moves Right
+- Space - Shoot Laserbeam
 
 # Mechanics (Unique Mechanics from Class Game):
 
