@@ -12,7 +12,7 @@ Left Arrow - Moves Left
 Right Arrow - Moves Right
 Space - Shoot Laserbeam
 
-Mechanics (Unique Mechanics from Class Game):
+# Mechanics (Unique Mechanics from Class Game):
 
 - Player is only able to move LEFT and RIGHT
 - Aliens attack Earth from above and move DOWN only
